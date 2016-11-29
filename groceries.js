@@ -1,4 +1,5 @@
 var myList = [];
+var allList;
 
 function addItem()
 {
@@ -48,6 +49,19 @@ function removeParentListItem()
   grandma.removeChild(mom);
 
   console.log(myList);
+}
+
+function saveList()
+{
+  allList = myList.toString();
+  setCookie("item", allList, 10);
+  console.log(allList);
+}
+
+function clearList()
+{
+  document.getElementById("listDisplay").innerHTML = "";
+  myList = [];
 }
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
